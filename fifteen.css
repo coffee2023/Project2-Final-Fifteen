@@ -1,0 +1,302 @@
+
+body {
+  font-size: 16px; 
+	background-color: #f6f6f2;
+	margin: 0px;
+	font-family: "Lucida", monospace;
+}
+.container {
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+	background-color: #f6f6f2; /*backgraound of containter*/
+/*  animation: expand .8s ease forwards;  */
+  position: relative;
+/*  transition: all .8s ease;*/
+}
+.navBar {
+	overflow: hidden;
+	top: 0;
+	width: 100%;
+	font-family: "Lucida", monospace;
+	background-color: #343148FF; /*COLOR OF NAVIGATION BAR*/
+	text-align: center;
+	height: 70px;
+	margin-top:0px;
+}
+p{
+  line-height: 5px;
+  transform: translateY(300px);
+  animation: slideUp .8s ease-in-out forwards .8s;
+}
+h1{
+	color: white;
+}
+h3{
+	text-align: center;
+	color: #343148FF;
+	font-size: 30px;
+	text-decoration: underline;
+}
+
+/*.title {
+  overflow: hidden;
+  height: auto;
+}*/
+
+@keyframes slideIn{
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+/*this css code will transform the whole website up when opened/ refreshed*/
+@keyframes slideUp{
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes expand{
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/*this the area/div where the game is */
+#game_area{
+	position: relative; 
+	width: 400px; 
+  height: 380px; 
+  margin: 0 auto; 
+} 
+
+/*this will change the cursur to a pointer when hovering over block that
+can be moved*/
+.text1{ 
+    cursor: pointer;
+}
+/*this will add a red border to block that can be moved*/
+.text1:hover{ 
+	box-shadow: 0px 0px 2px 2px red;
+}
+/*
+#show{ 
+  font-size: 40px;
+	color: #C31BBE; 
+}*/
+
+/*this is the css of the tiles of the game*/
+.tiles{ 
+/*  background-image: url("pic0.jfif");*/ /*makes pic0 the default background of game*/
+    border: 1px solid black; 
+    position: absolute;
+		font-size: 40px;
+}
+
+/*game border css*/
+.game_frame{
+	font-size: 1.6rem;
+	margin: auto;
+	width: 550px;
+	border-left: 80px solid;
+	border-right: 80px solid;
+	border-top: 10px solid;
+	border-bottom: 30px solid;
+	padding: 0px;
+	color: #343148FF ;
+}
+/*div for the timer and moves*/
+.counterText {	
+	font-family: "Lucida", monospace;
+}
+
+#alert{
+	display: none;
+	position: fixed;
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+/*div of the text inside the congrats alert*/
+#msg{
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+}
+/*div of the congrats message*/
+.detail_alert{
+	animation-name: backgroundColorPalette;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5vh;
+	border: 5px dashed;
+	border-radius: 10px 10px 10px 10px;
+}
+/*image of the congrats alert gif*/
+.congratsImg{
+	width:250px;
+	height:180px;
+	margin: auto;
+}
+/*css tag found js file. add the img options in column 3 of webpage*/
+.img1{
+	width: 95px;
+	height: 95px;
+}
+/*button of the congrats alert*/
+.congratsbutton{
+	cursor: pointer;
+	margin-top: 10px;
+	margin-bottom:10px;
+    width: 50px;
+}
+/*css tag found js file. button of option images*/
+.choose_bg{
+	padding: 0px;
+	cursor: pointer;
+	width: 110px;
+	height: 110px;
+}
+.choose_bg:hover{ 
+	box-shadow: 5px 5px 15px 5px #343148FF;
+	background-image: linear-gradient(
+      to right, 
+      #343148FF,
+      #f6f6f2
+    );
+/*  animation:slidebg 2s linear infinite;*/
+}
+
+/*css of the 'start game' and '4x4' buttons*/
+.buttons {
+    background-color: #343148FF;
+    border-radius: 15px;
+    border: 7px double FloralWhite;
+    color: FloralWhite;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+    cursor: pointer;
+    margin: 3px;
+}
+.buttons:hover{ 
+	box-shadow: 5px 5px 15px 5px black;
+	background-image: linear-gradient(
+      to right, 
+      black,
+      black
+    );
+}
+/*css of the div that holds the timer and moves made*/
+.counterDiv{
+    background-color: #343148ff;
+    border-radius: 15px;
+    border: 15px double FloralWhite;
+    color: FloralWhite;
+    text-align: center;
+    font-size: 24px;
+    margin: 1px;
+}
+/*div that has col 1, 2, & 3*/
+.row {
+	display: flex;
+	transform: translateY(1000px);
+	animation: slideUp .8s ease-in-out forwards .8s;
+}
+/*col 1 */
+.column1{
+	flex: 25%;
+	line-height: 28px;
+}
+/*col2*/
+.column2 {
+	flex: 50%;
+	text-align: center;
+}
+/*col3*/
+.column3 {
+	flex: 25%;
+	text-align: center;
+	line-height: 28px;
+}
+
+ul{
+	font-weight:bold;
+}
+.rainbow{
+  background-color: #343A40;
+  border-radius: 4px;  
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+ 
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
+
+.button_9{
+	font-size: 1em;
+    background: #7FE466;
+    color: #fff;
+    border: 0.25rem solid #7FE466;
+    padding: 0.85em 0.75em;
+    margin: 1rem;
+    border-radius: 50px;
+	cursor:pointer;
+}
+
+@keyframes backgroundColorPalette{
+	
+  0% {
+    background: #ee6055;
+		border: 4px solid #ee6055;
+  }
+  25% {
+    background: #60d394;
+		border: 4px solid #60d394;
+  }
+  50% {
+    background: #aaf683;
+		border: 4px solid #aaf683;
+  }
+  75% {
+    background: #ffd97d;
+		border: 4px solid #ffd97d;
+  }
+  100% {
+    background: #ff9b85;
+		border: 4px solid #ff9b85;
+  }
+}
+
+@keyframes spin {100% { transform:rotate(360deg); }}
+
+.w3cValidators{
+	margin-left: 85%;
+}
